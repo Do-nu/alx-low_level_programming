@@ -1,6 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "main.h"
+#include <time.h>
+#define stopLimit 2645
+#define asciiStop 127
+#define asciiStart 32
+
 
 /**
  * main - program that generates random valid
@@ -10,26 +14,23 @@
 
 int main(void)
 {
-	int pass[100];
-	int i, sum, n;
-
-	sum = 0;
+	char password[100];
+	int randValue, num = 0, i = 0;
 
 	srand(time(NULL));
 
-	for (i = 0; i < 100; i++)
+	while (num < stopLimit)
 	{
-		pass[i] = rand() % 78;
-		sum += (pass[i] + '0');
-		putchar(pass[i] + '0');
-		if ((2772 - sum) - '0' < 78)
+		randValue = random() % asciiStop;
+
+		if (randValue > asciiStart)
 		{
-			n = 2772 - sum - '0';
-			sum += n;
-			putchar(n + '0');
-			break;
+			password[i++] = randValue;
+			num += randValue;
 		}
 	}
-
+	password[i++] = 2772 - num);
+	password[i] = '\0';
+	printf("%s", password);
 	return (0);
 }
