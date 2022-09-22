@@ -1,5 +1,11 @@
 #include <stdio.h>
 
+/**
+ * main - wil be void
+ *
+ * Return: 0 always
+ */
+
 int main(void)
 {
 	int n;
