@@ -54,21 +54,19 @@ int _atoi(char *s)
  * Return: 0 (Success),  1 (Error)
  */
 
-int main(int argc, char *argv[])
+int main(int argc, char **argv)
 {
-	int result, num1, num2;
+	int x, y;
 
-	if (argc < 3 || argc > 3)
+	if (argc < 3)
 	{
 		printf("Error\n");
 		return (1);
 	}
 
-	num1 = _atoi(argv[1]);
-	num2 = __atoi(argv[2]);
-	result = num1 * num2;
-
-	printf("%d\n", result);
+	x = atoi(argv[1]);
+	y = atoi(argv[2]);
+	printf("%d\n", x * y);
 
 	return (0);
 }
