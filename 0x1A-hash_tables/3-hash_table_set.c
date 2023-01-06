@@ -23,15 +23,15 @@ int create_and_add_node(hash_table_t *ht, const char *key, const char *value,
 	k = strdup(key);
 	if (!k)
 	{
-		free (node);
+		free(node);
 		return (0);
 	}
 
 	v = strdup(value);
 	if (!v)
 	{
-		free (k);
-		free (node);
+		free(k);
+		free(node);
 		return (0);
 	}
 
@@ -43,7 +43,7 @@ int create_and_add_node(hash_table_t *ht, const char *key, const char *value,
 	else
 		node->next = (ht->array)[idx];
 	(ht->array)[idx] = node;
-	
+
 	return (1);
 }
 
